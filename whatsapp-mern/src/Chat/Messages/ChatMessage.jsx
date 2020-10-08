@@ -4,16 +4,19 @@ import "./ChatMessage.css";
 function ChatMessage(props) {
     return (
         <div>
-           <p className={`chat__message ${props.className}`}>
+           <p className={`chat__message ${props.messageReceived  && 'chat__receiver'}`} >
                     <span className="chat__name">{props.name}</span>
-                    This is a message
+                    {props.content}
                     <span className="chat__timestamp">
-                      {new Date().toLocaleString("en-US", 
+                      {console.log(props.time)}
+                      {props.time}
+                      
+                      {/* {new Date().toLocaleString("en-US", 
                                  { 
                                      hour: "numeric", 
                                      minute : "numeric",
                                      hour12: true})
-                                 }
+                                 } */}
                       {/* {`${hours}:${minutes}`}   */}
                     </span>
                 </p> 

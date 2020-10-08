@@ -15,7 +15,7 @@ function ChatFooter(props) {
                 </IconButton>
                 <form>
                     <input type="text" 
-                           placeholder="Type a message"/>
+                           placeholder="Type your message"/>
                     <button type="submit"><Send /></button>
                     
                     </form>

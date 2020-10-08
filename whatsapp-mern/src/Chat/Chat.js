@@ -7,10 +7,11 @@ import { AttachFile, MoreVert, SearchOutlined } from "@material-ui/icons";
 import "./Chat.css";
 
 
-function Chat(props) {
+function Chat({ messages }) {
     // let time = new Date();
     // let hours = time.getHours();
     // let minutes = time.getMinutes();
+    console.log(messages);
     return (
         <div className = "chat">
             {/* <h1>Chat Component</h1> */}
@@ -35,13 +36,14 @@ function Chat(props) {
             </div>
 
             <div className="chat__body">
-                <ChatMessage name="Aazad"/>
-                <ChatMessage name="Cooper"  
-                             className = "chat__receiver"
-                             time
-                />
-                <ChatMessage name="Aazad"/><ChatMessage /><ChatMessage /><ChatMessage />
-                            <ChatMessage /><ChatMessage className = "chat__receiver"/>
+                {messages.map((message, index) => (
+                    <ChatMessage key = {index}
+                                 name={message.name}
+                                 content = {message.message}
+                                 time = {message.timestamp}
+                                 messageReceived = {message.received}  />
+                ))}
+                
                             
             </div>
             <ChatFooter />
